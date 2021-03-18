@@ -1,0 +1,47 @@
+.container {
+    padding: 0 8px;
+    position: relative;
+    min-width: 160px;
+}
+
+.container input {
+    box-sizing:border-box;
+    width: 100%;
+    min-width: 150px;
+    font-size: 16px;
+    padding: 20px 30px 1px 9px;
+    outline: none;
+    border-width: 0 0 1px 0;
+    border-radius: 5px;
+}
+
+.container input:focus {
+    border-width: 0 0 2px 0;
+}
+
+.container input::placeholder {
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #c6c6c6c5;
+} 
+
+.container label {
+    font-family: 'Blinker', sans-serif;
+    position: absolute;
+    color: #c6c6c6;
+    letter-spacing: 1.1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 900;
+    pointer-events: none;
+    padding-left: 8px;
+}
+
+
+.container span {
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    right: 5px;
+}
