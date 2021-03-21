@@ -27,23 +27,55 @@
 .techContainer {
     display: flex;
     flex-wrap: wrap;
+    padding: 10px 10px 20px;
 }
 
 .techLabel {
-    letter-spacing: 1.5px;
-    font-size: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #851d8fa1;
     text-transform: uppercase;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Blinker', sans-serif;
+}
+
+.attrContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .container {
-    text-transform: uppercase;
-    font-family: 'Blinker', sans-serif;
-    font-size: 14px;
-    color: #851d8fa1;
+    font-size: 1.3rem;
+    color: #000;
     text-align: left;
     background-color: #fff;
-    padding: 10px 20px;
     margin: 20px 5px;
     border-radius: 10px;
+    max-width: 230px;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.avatar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    padding: 10px 50px;
+    position: relative;
+}
+
+.avatarBackground {
+    background-color: #000;
+    background-repeat: repeat;
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    border-radius: 0 0 100% 100%;
 }

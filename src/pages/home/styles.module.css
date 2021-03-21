@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     width: 80%;
-    height: 850px;
+    height: 100%;
 }
 
 .formsContainer {
@@ -18,13 +18,12 @@
     border-radius: 4px;
 }
 
-.list {
+.listContainer {
     width: 0px;
-    overflow: scroll;
 }
 
 .formsContainer,
-.list {
+.listContainer {
     height: 100%;
 }
 
@@ -38,6 +37,16 @@ h1 {
 .filters {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: stretch;
+    align-items: stretch;
 }
 
 @media only screen and (max-width: 1366px) {
@@ -45,12 +54,24 @@ h1 {
         flex-direction: column;
     }
 
-    .list,
-    .forms {
+    .listContainer,
+    .formsContainer {
         width: 100%;
+        margin-top: 20px;
+    }
+
+    .listContainer {
+        height: 0;
     }
 
     .list {
-        height: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .list {
+        align-items: stretch;
     }
 }

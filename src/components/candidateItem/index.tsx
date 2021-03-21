@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Candidate from '../../model/candidate';
 import { forEach } from 'ramda';
+import Avatar from './avatars';
 import styles from './styles.module.css';
 
 export interface CandidateCardType {
@@ -21,20 +23,30 @@ const CandidateCard: React.FC<CandidateCardType> = ({ candidate }: CandidateCard
     };
 
     return (
-        <div key={candidate.id} className={styles.container}>
-            <div>
+        <motion.div
+            animate={{
+                scale: [0.8, 1, 1],
+            }}
+            key={candidate.id}
+            className={styles.container}
+        >
+            <div className={styles.avatar}>
+                <div className={styles.avatarBackground}></div>
+                <Avatar />
+            </div>
+            <div className={styles.attrContainer}>
                 <a className={styles.techLabel}>Candidato:</a>
                 {candidate.id}
             </div>
-            <div>
+            <div className={styles.attrContainer}>
                 <a className={styles.techLabel}>Cidade:</a>
                 {candidate.city}
             </div>
-            <div>
+            <div className={styles.attrContainer}>
                 <a className={styles.techLabel}>Tecnologias:</a>
                 <div className={styles.techContainer}>{renderTechs()}</div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

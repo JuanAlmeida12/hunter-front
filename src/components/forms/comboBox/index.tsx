@@ -37,8 +37,8 @@ const ComboBox: React.FC<ComboBoxType> = ({ label, color, items, icon, onSelect 
     };
 
     useEffect(() => {
-        function handleClickOutside(event: any) {
-            if (refContainer != null && refContainer.current && !refContainer.current.contains(event.target)) {
+        function handleClickOutside(event: Event) {
+            if (refContainer != null && refContainer.current && !refContainer.current.contains(event.target as Node)) {
                 set(false);
             }
         }

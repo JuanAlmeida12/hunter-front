@@ -1,4 +1,11 @@
-const getMobileDetect = (userAgent: string) => {
+type MobileDetector = {
+    isMobile: () => boolean;
+    isDesktop: () => boolean;
+    isAndroid: () => boolean;
+    isIos: () => boolean;
+    isSSR: () => boolean;
+};
+const getMobileDetect = (userAgent: string): MobileDetector => {
     const isAndroid = (): boolean => Boolean(userAgent.match(/Android/i));
     const isIos = (): boolean => Boolean(userAgent.match(/iPhone|iPad|iPod/i));
     const isOpera = (): boolean => Boolean(userAgent.match(/Opera Mini/i));
@@ -15,7 +22,7 @@ const getMobileDetect = (userAgent: string) => {
         isSSR,
     };
 };
-const useMobileDetect = () => {
+const useMobileDetect = (): MobileDetector => {
     //useEffect(() => {}, []);
     const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
     return getMobileDetect(userAgent);

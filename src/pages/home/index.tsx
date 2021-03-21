@@ -150,9 +150,9 @@ const Home: React.FC = () => {
                     />
                 </div>
             </motion.div>
-            <motion.div animate={controlsList} className={styles.list}>
+            <motion.div animate={controlsList} className={styles.listContainer}>
                 <div className={styles.filters}>{renderFilters()}</div>
-                <div>
+                <div className={styles.list}>
                     {candidates.map((ca: Candidate) => (
                         <CandidateItem key={ca.id} candidate={ca} />
                     ))}
